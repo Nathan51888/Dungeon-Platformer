@@ -6,11 +6,12 @@ public class PlayerJump : MonoBehaviour
 {
     Rigidbody2D rb;
     JumpDetection jd;
+    PlayerMaster master;
 
-    private void Awake()
-    {
+    private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         jd = GetComponent<JumpDetection>();
+        master = GetComponent<PlayerMaster>();
     }
 
     [Range (1, 10)]
@@ -19,27 +20,28 @@ public class PlayerJump : MonoBehaviour
     public float lowJumpMultiplier = 2f;
     float JumpPressedRememberTime = 0.1f;
     float JumpPressedRemember = 0;
-    private void Update()
-    {
-        JumpPressedRemember -= Time.deltaTime;
-        if (Input.GetButtonDown("Jump"))
-            JumpPressedRemember = JumpPressedRememberTime;
 
-        if (JumpPressedRemember > 0 && jd.isGrounded)
-        {
-            JumpPressedRemember = 0f;
-            rb.velocity = Vector2.up * jumpVelocity;
-        }
+    private void Update() {
+        if (!master.endingGame) {
+            JumpPressedRemember -= Time.deltaTime;
+            
+            if (Input.GetButtonDown("Jump"))
+                JumpPressedRemember = JumpPressedRememberTime;
 
-        if (rb.velocity.y < 0)
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            if (JumpPressedRemember > 0 && jd.isGrounded) {
+                JumpPressedRemember = 0f;
+                rb.velocity += Vector2.up * jumpVelocity;
+            }
 
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            if (rb.velocity.y < 0)
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+
+            else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }else rb.velocity = new Vector2(0,0);
     }
-    void OnDrawGizmos()
-    {
+    /*void OnDrawGizmos() {
         Gizmos.color = new Color (0, 1, 0, 0.5f);
         Gizmos.DrawCube (new Vector2 (transform.position.x, transform.position.y - 0.505f), new Vector2 (1, 0.01f));
-    }
+    }*/
 }
