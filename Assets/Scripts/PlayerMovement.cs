@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     PlayerMaster master;
-
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         master = GetComponent<PlayerMaster>();
@@ -15,29 +14,28 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     [Range(0, 1)]
     public float playerDampingHoriz;
-    public bool facingRight;
+    public bool isFacingRight;
+    public float playerAxis;
     float playerVelocityX;
 
     private void Start() {
-        facingRight = true;
+        isFacingRight = true;
     }
-    private void Update() {
-        if (!master.endingGame) {
-            playerVelocityX = rb.velocity.x;
-            playerVelocityX += Input.GetAxisRaw("Horizontal");
-            playerVelocityX *= Mathf.Pow(1f - playerDampingHoriz, Time.deltaTime * 10f);
-            rb.velocity = new Vector2(playerVelocityX, rb.velocity.y);
-            if (Input.GetAxisRaw("Horizontal") < 0 && facingRight) {
-                Flip();
-                facingRight = false;
-            } else if(Input.GetAxisRaw("Horizontal") > 0 && !facingRight) {
-                Flip();
-                facingRight = true;
-            }
-        } else rb.velocity = new Vector2(0,0);
+
+    private void FixedUpdate() {
+        playerAxis = Input.GetAxisRaw("Horizontal");
+        playerVelocityX = playerAxis * playerSpeed;
+        rb.velocity = new Vector2(playerVelocityX, rb.velocity.y);
+        if (playerAxis < 0 && isFacingRight) {
+            Flip();
+            isFacingRight = false;
+        } else if(playerAxis > 0 && !isFacingRight) {
+            Flip();
+            isFacingRight = true;
+        }
     }
     private void Flip() {
-        facingRight = !facingRight;
+        isFacingRight = !isFacingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
