@@ -12,8 +12,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public float playerSpeed;
-    [Range(0, 1)]
-    public float playerDampingHoriz;
     public bool isFacingRight;
     public float playerAxis;
     float playerVelocityX;

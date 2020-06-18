@@ -7,14 +7,16 @@ using UnityEngine.UI;
 public class PlayerMaster : MonoBehaviour
 {
     public Text gameEndingText;
+    public Text playerHealthText;
     private void Start() {
         gameEndingText.enabled = false;
+        playerHealthText.text = "Health: " + hp;
     }
 
     public int hp = 1;
     public int maxhp = 1;
     public int hpBuffer = 100;
-    private int hpBufferCurrent = 200;
+    int hpBufferCurrent = 200;
     public bool endingGame = false;
     public int endGameTime = 100;
 
@@ -34,6 +36,7 @@ public class PlayerMaster : MonoBehaviour
     public void HurtPlayer(int hurt) {
         if (hpBufferCurrent >= hpBuffer) {
             hp -= hurt;
+            playerHealthText.text = "Health: " + hp;
             if (hp <= 0){
                 GameOver();
             }
