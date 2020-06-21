@@ -7,10 +7,11 @@ using UnityEngine.UI;
 public class PlayerMaster : MonoBehaviour
 {
     public Text gameEndingText;
-    public Text playerHealthText;
+    public HealthBar playerHealthBar;
+    public PlayerMovement movement;
     private void Start() {
         gameEndingText.enabled = false;
-        playerHealthText.text = "Health: " + hp;
+        playerHealthBar.SetMaxHealth(maxhp);
     }
 
     public int hp = 1;
@@ -36,7 +37,7 @@ public class PlayerMaster : MonoBehaviour
     public void HurtPlayer(int hurt) {
         if (hpBufferCurrent >= hpBuffer) {
             hp -= hurt;
-            playerHealthText.text = "Health: " + hp;
+            playerHealthBar.SetHealth(hp);
             if (hp <= 0){
                 GameOver();
             }
@@ -49,5 +50,11 @@ public class PlayerMaster : MonoBehaviour
     }
     private void ResetGame() {
         SceneManager.LoadScene(0);
+    }
+    public void Flip() {
+        movement.isFacingRight = !movement.isFacingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
     }
 }

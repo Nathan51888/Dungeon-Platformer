@@ -9,9 +9,9 @@ public class PlayerDetection : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    public float wallJumpTime = 0.2f;
-    public float wallSlideSpeed = 0.15f;
-    public float wallDistance = 0.6f;
+    public float wallJumpTime;
+    public float wallSlideSpeed;
+    public float wallDistance;
     public bool isWallSliding = false;
     RaycastHit2D WallCheckHit;
     float jumpTime;
@@ -21,8 +21,12 @@ public class PlayerDetection : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = Physics2D.OverlapArea (new Vector2 (transform.position.x - 0.9f, transform.position.y - 1f),
-            new Vector2 (transform.position.x + 0.9f, transform.position.y - 1.1f), groundLayers);
+        isGrounded = Physics2D.OverlapArea (new Vector2 (transform.position.x - 0.4f, transform.position.y - 1f),
+            new Vector2 (transform.position.x + 0.4f, transform.position.y - 1.1f), groundLayers);
+    }
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y -1f), new Vector2(0.8f, 0.1f));
     }
     private void FixedUpdate() {
         if (playerMovement.isFacingRight) {

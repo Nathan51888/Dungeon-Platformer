@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public PlayerMaster master;
     public float attackPressedRememberTime;
     float attackPressedRemember;
 
@@ -17,17 +18,19 @@ public class PlayerAttack : MonoBehaviour
     public int damage;
     
     private void Update() {
-        if (attackPressedRemember <= 0) {
-            //Able to attack now
-            if (Input.GetButtonDown("Attack1")) {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRangeX, attackRangeY), 0,
-                enemyHurtBox);
-                for (int i = 0; i < enemiesToDamage.Length; i++) {
-                    enemiesToDamage[i].GetComponent<EnemyMaster>().TakeDamage(damage);
+        if (!master.endingGame) {
+            if (attackPressedRemember <= 0) {
+                //Able to attack now
+                if (Input.GetButtonDown("Attack1")) {
+                    Collider2D[] enemiesToDamage = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRangeX, attackRangeY), 0,
+                    enemyHurtBox);
+                    for (int i = 0; i < enemiesToDamage.Length; i++) {
+                        enemiesToDamage[i].GetComponent<EnemyMaster>().TakeDamage(damage);
+                    }
+                    attackPressedRemember = attackPressedRememberTime;
                 }
-                attackPressedRemember = attackPressedRememberTime;
-            }
-        }else attackPressedRemember -= Time.deltaTime;
+            }else attackPressedRemember -= Time.deltaTime;
+        }
     }
 
     private void OnDrawGizmos() {

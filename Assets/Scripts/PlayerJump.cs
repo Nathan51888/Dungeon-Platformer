@@ -7,21 +7,25 @@ public class PlayerJump : MonoBehaviour
     Rigidbody2D rb;
     PlayerDetection pd;
     PlayerMaster master;
+    PlayerMovement movement;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         pd = GetComponent<PlayerDetection>();
         master = GetComponent<PlayerMaster>();
+        movement = GetComponent<PlayerMovement>();
     }
 
-    [Range (1, 10)]
     public float jumpVelocity;
-    public float fallMultiplier = 2.5f;
-    public float lowJumpMultiplier = 2f;
-    public float JumpPressedRememberTime = 0.1f;
-    public float GroundRememberTime = 0.2f;
+    public float wallJumpVelocityX;
+    public float fallMultiplier;
+    public float lowJumpMultiplier;
+    public float JumpPressedRememberTime;
+    public float GroundRememberTime;
+    public float wallJumpRememberTime;
     float JumpPressedRemember = 0;
     float GroundRemember = 0;
+    public float wallJumpRemember = 0;
 
     private void Update() {
         if (!master.endingGame) {
@@ -34,28 +38,47 @@ public class PlayerJump : MonoBehaviour
         }else rb.velocity = new Vector2(0,0);
     }
     private void FixedUpdate() {
+        //Timers
         JumpPressedRemember -= Time.deltaTime;
         GroundRemember -= Time.deltaTime;
-
-        if (JumpPressedRemember > 0 && GroundRemember > 0 || JumpPressedRemember > 0 && pd.isWallSliding) {
-            JumpPressedRemember = 0f;
-            GroundRemember = 0f;
-            Debug.Log("Player jumped");
-            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+        wallJumpRemember -= Time.deltaTime;
+        //After pressed jump or left ground
+        if (wallJumpRemember < 0) {
+            if (JumpPressedRemember > 0 && GroundRemember > 0) {
+                JumpPressedRemember = 0f;
+                GroundRemember = 0f;
+                Debug.Log("Player jumped");
+                rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+            }
         }
+        
+        //Jump gravity
         if (rb.velocity.y < 0) {
             Debug.Log("Normal jump gravity");
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier -1) * Time.deltaTime;
         }
         else if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
             Debug.Log("Low jump gravity");
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier -1) * Time.deltaTime;
         }
-        if (pd.isWallSliding)
+        //Is wall sliding
+        if (pd.isWallSliding) {
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, pd.wallSlideSpeed, float.MaxValue));
-    }
-    private void OnDrawGizmos() {
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y -1f), new Vector2(0.9f, 0.1f));
+            //Wall jump velocity
+            if (movement.isFacingRight && JumpPressedRemember > 0) {
+                pd.isWallSliding = false;
+                JumpPressedRemember = 0f;
+                Debug.Log("Player wall jumped left");
+                wallJumpRemember = wallJumpRememberTime;
+                rb.velocity = new Vector2(wallJumpVelocityX * -1, jumpVelocity);
+            } 
+            else if (!movement.isFacingRight && JumpPressedRemember > 0) {
+                pd.isWallSliding = false;
+                JumpPressedRemember = 0f;
+                Debug.Log("Player wall jumped right");
+                wallJumpRemember = wallJumpRememberTime;
+                rb.velocity = new Vector2(wallJumpVelocityX * 1, jumpVelocity);
+            }
+        }  
     }
 }

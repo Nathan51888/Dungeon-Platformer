@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17740819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7000009, z: -10}
+  m_LocalPosition: {x: 0.0000005364418, y: 3.3999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1381633621}
@@ -374,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127553779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.7000009, z: -10}
+  m_LocalPosition: {x: 0.0000005364418, y: 3.3999996, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -871,6 +871,7 @@ MonoBehaviour:
   m_OptimizeCollider: 1
   m_OptimizeGeometry: 1
   m_EnableTangents: 0
+  m_GeometryCached: 0
 --- !u!1971053207 &522815928
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -1334,11 +1335,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbdcd4ebab226be49b825fd498c09a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: 10
-  fallMultiplier: 3
+  jumpVelocity: 12
+  fallMultiplier: 5
   lowJumpMultiplier: 7
   JumpPressedRememberTime: 0.2
-  GroundRememberTime: 0.17
+  GroundRememberTime: 0.13
 --- !u!114 &931405123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3795,16 +3796,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LookaheadTime: 0
-  m_LookaheadSmoothing: 10
-  m_LookaheadIgnoreY: 0
-  m_XDamping: 0.1
+  m_LookaheadSmoothing: 18
+  m_LookaheadIgnoreY: 1
+  m_XDamping: 0.4
   m_YDamping: 0.1
   m_ZDamping: 0
   m_ScreenX: 0.5
-  m_ScreenY: 0.6
+  m_ScreenY: 0.7
   m_CameraDistance: 10
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0.05
+  m_DeadZoneWidth: 0.05
+  m_DeadZoneHeight: 0.09
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.8

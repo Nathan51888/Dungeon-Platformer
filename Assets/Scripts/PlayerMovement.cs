@@ -6,15 +6,20 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     PlayerMaster master;
+    PlayerDetection pd;
+    PlayerJump playerJump;
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         master = GetComponent<PlayerMaster>();
+        pd = GetComponent<PlayerDetection>();
+        playerJump = GetComponent<PlayerJump>();
     }
 
     public float playerSpeed;
     public bool isFacingRight;
     public float playerAxis;
     float playerVelocityX;
+    
 
     private void Start() {
         isFacingRight = true;
@@ -22,20 +27,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() {
         playerAxis = Input.GetAxisRaw("Horizontal");
-        playerVelocityX = playerAxis * playerSpeed;
-        rb.velocity = new Vector2(playerVelocityX, rb.velocity.y);
-        if (playerAxis < 0 && isFacingRight) {
-            Flip();
+        if (playerJump.wallJumpRemember < 0) {
+            playerVelocityX = playerAxis * playerSpeed;
+            rb.velocity = new Vector2(playerVelocityX, rb.velocity.y);
+        }
+        if (rb.velocity.x < 0 && isFacingRight) {
+            master.Flip();
             isFacingRight = false;
-        } else if(playerAxis > 0 && !isFacingRight) {
-            Flip();
+        } else if(rb.velocity.x > 0 && !isFacingRight) {
+            master.Flip();
             isFacingRight = true;
         }
-    }
-    private void Flip() {
-        isFacingRight = !isFacingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 }
