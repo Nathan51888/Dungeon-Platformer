@@ -32,10 +32,10 @@ public class EnemyMaster : MonoBehaviour
             Destroy(gameObject);
     }
     public void TakeDamage(int damage, bool facingRight) {
-        if (facingRight)
+        if (movement.isFacingRight)
             rb.AddForce(direction.normalized * knockBackStrength, ForceMode2D.Impulse);
-        else if (!facingRight)
-            rb.AddForce(direction.normalized * knockBackStrength, ForceMode2D.Impulse);
+        else if (!movement.isFacingRight)
+            rb.AddForce(direction.normalized * -knockBackStrength, ForceMode2D.Impulse);
         stunRemember = stunRememberTime;
         enemyHealth -= damage;
         Debug.Log("Enemy taken damage");

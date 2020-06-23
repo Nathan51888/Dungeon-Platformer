@@ -951,8 +951,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 931405116}
   stunRememberTime: 0.15
-  enemyHealth: 5
-  speedHoriz: 2
+  enemyHealth: 20
+  speedHoriz: 0
   moveDirection: -1
   knockBackStrength: 8
   direction: {x: 1, y: 0}
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   enemyHurtBox:
     serializedVersion: 2
     m_Bits: 1024
-  attackRangeX: 2
+  attackRangeX: 3
   attackRangeY: 2
   damage: 1
 --- !u!114 &931405124
@@ -4261,7 +4261,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418242506}
   m_Enabled: 1
-  m_CellSize: {x: 1.33, y: 1.33, z: 0}
+  m_CellSize: {x: 1.2, y: 1.33, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
