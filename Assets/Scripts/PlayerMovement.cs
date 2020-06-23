@@ -26,17 +26,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        playerAxis = Input.GetAxisRaw("Horizontal");
-        if (playerJump.wallJumpRemember < 0) {
-            playerVelocityX = playerAxis * playerSpeed;
-            rb.velocity = new Vector2(playerVelocityX, rb.velocity.y);
-        }
-        if (rb.velocity.x < 0 && isFacingRight) {
-            master.Flip();
-            isFacingRight = false;
-        } else if(rb.velocity.x > 0 && !isFacingRight) {
-            master.Flip();
-            isFacingRight = true;
+        if (!master.endingGame) {
+            playerAxis = Input.GetAxisRaw("Horizontal");
+            if (playerJump.wallJumpRemember < 0) {
+                playerVelocityX = playerAxis * playerSpeed;
+                rb.velocity = new Vector2(playerVelocityX, rb.velocity.y);
+            }
+            if (rb.velocity.x < 0 && isFacingRight) {
+                master.Flip();
+                isFacingRight = false;
+            } else if(rb.velocity.x > 0 && !isFacingRight) {
+                master.Flip();
+                isFacingRight = true;
+            }
         }
     }
 }

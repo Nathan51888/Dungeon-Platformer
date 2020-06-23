@@ -9,12 +9,12 @@ public class PlayerDetection : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    public float wallJumpTime;
+    public float wallJumpTimeRemember;
     public float wallSlideSpeed;
     public float wallDistance;
     public bool isWallSliding = false;
     RaycastHit2D WallCheckHit;
-    float jumpTime;
+    public float wallJumpTime;
     public LayerMask groundLayers;
     public LayerMask wallLayers;
     public bool isGrounded;
@@ -29,6 +29,7 @@ public class PlayerDetection : MonoBehaviour
         Gizmos.DrawCube(new Vector2(transform.position.x, transform.position.y -1f), new Vector2(0.8f, 0.1f));
     }
     private void FixedUpdate() {
+        wallJumpTime -= Time.deltaTime;
         if (playerMovement.isFacingRight) {
             WallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, wallLayers);
             Debug.DrawRay(transform.position, new Vector2(wallDistance, 0), Color.green);
@@ -39,8 +40,8 @@ public class PlayerDetection : MonoBehaviour
 
         if (WallCheckHit && !isGrounded && playerMovement.playerAxis != 0) {
             isWallSliding = true;
-            jumpTime = Time.time + wallJumpTime;
-        } else if (jumpTime < Time.time)
+            wallJumpTime = wallJumpTimeRemember;
+        } else
             isWallSliding = false;
     }
 }

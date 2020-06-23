@@ -80,5 +80,19 @@ public class PlayerJump : MonoBehaviour
                 rb.velocity = new Vector2(wallJumpVelocityX * 1, jumpVelocity);
             }
         }  
+        else if (movement.isFacingRight && pd.wallJumpTime > 0 && movement.playerAxis > 0 && JumpPressedRemember > 0) {
+            pd.isWallSliding = false;
+            JumpPressedRemember = 0f;
+            Debug.Log("Player wall jumped right");
+            wallJumpRemember = wallJumpRememberTime;
+            rb.velocity = new Vector2(wallJumpVelocityX * 1, jumpVelocity);
+        }
+        else if (!movement.isFacingRight && pd.wallJumpTime > 0 && movement.playerAxis < 0 && JumpPressedRemember > 0) {
+            pd.isWallSliding = false;
+            JumpPressedRemember = 0f;
+            Debug.Log("Player wall jumped left");
+            wallJumpRemember = wallJumpRememberTime;
+            rb.velocity = new Vector2(wallJumpVelocityX * -1, jumpVelocity);
+        }
     }
 }
