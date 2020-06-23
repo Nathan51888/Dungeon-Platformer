@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMaster : MonoBehaviour
 {
+    public PlayerMovement movement;
     Rigidbody2D rb;
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -30,8 +31,11 @@ public class EnemyMaster : MonoBehaviour
         else if (enemyHealth <= 0)
             Destroy(gameObject);
     }
-    public void TakeDamage(int damage) {
-        rb.AddForce(direction.normalized * knockBackStrength, ForceMode2D.Impulse);
+    public void TakeDamage(int damage, bool facingRight) {
+        if (facingRight)
+            rb.AddForce(direction.normalized * knockBackStrength, ForceMode2D.Impulse);
+        else if (!facingRight)
+            rb.AddForce(direction.normalized * knockBackStrength, ForceMode2D.Impulse);
         stunRemember = stunRememberTime;
         enemyHealth -= damage;
         Debug.Log("Enemy taken damage");

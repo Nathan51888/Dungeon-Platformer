@@ -9,6 +9,7 @@ public class PlayerMaster : MonoBehaviour
     public Text gameEndingText;
     public HealthBar playerHealthBar;
     public PlayerMovement movement;
+    public Animator animator;
     private void Start() {
         gameEndingText.enabled = false;
         playerHealthBar.SetMaxHealth(maxhp);
@@ -16,15 +17,16 @@ public class PlayerMaster : MonoBehaviour
 
     public int hp = 1;
     public int maxhp = 1;
-    public int hpBuffer = 100;
-    int hpBufferCurrent = 200;
+    public int hpBufferTime = 100;
+    int hpBufferCurrent;
     public bool endingGame = false;
     public int endGameTime = 100;
-
+ 
     private void FixedUpdate() {
         if (!endingGame) {
-            if (hpBufferCurrent < hpBuffer) 
+            if (hpBufferCurrent < hpBufferTime) { 
                 hpBufferCurrent++;
+            }
             if (Input.GetAxisRaw("Reset") > 0) {
                 ResetGame();
             }
@@ -35,7 +37,8 @@ public class PlayerMaster : MonoBehaviour
         }
     }
     public void HurtPlayer(int hurt) {
-        if (hpBufferCurrent >= hpBuffer) {
+        if (hpBufferCurrent >= hpBufferTime) {
+            animator.SetTrigger("IsDamaged");
             hp -= hurt;
             playerHealthBar.SetHealth(hp);
             if (hp <= 0){
