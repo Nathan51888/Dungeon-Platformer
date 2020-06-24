@@ -5,13 +5,16 @@ using UnityEngine;
 public class EnemyMaster : MonoBehaviour
 {
     public PlayerMovement movement;
+    public HealthBar enemyHealthBar;
     Rigidbody2D rb;
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
+        enemyHealthBar.SetMaxHealth(enemyMaxHealth);
     }
     float stunRemember;
     public float stunRememberTime;
     public int enemyHealth;
+    public int enemyMaxHealth;
     public float speedHoriz;
     public int moveDirection;
     public float knockBackStrength;
@@ -20,7 +23,7 @@ public class EnemyMaster : MonoBehaviour
     private void FixedUpdate() {
         if (enemyHealth > 0) {
             if (stunRemember <= 0) {
-                moveDirection = -1;
+                moveDirection = 1;
                 rb.velocity = new Vector2(speedHoriz * moveDirection, rb.velocity.y);
             }
             else
@@ -39,5 +42,6 @@ public class EnemyMaster : MonoBehaviour
         stunRemember = stunRememberTime;
         enemyHealth -= damage;
         Debug.Log("Enemy taken damage");
+        enemyHealthBar.SetHealth(enemyHealth);
     }
 }
