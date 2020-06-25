@@ -11,24 +11,15 @@ public class EnemyMaster : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         enemyHealthBar.SetMaxHealth(enemyMaxHealth);
     }
-    float stunRemember;
+    public float stunRemember;
     public float stunRememberTime;
     public int enemyHealth;
     public int enemyMaxHealth;
-    public float speedHoriz;
-    public int moveDirection;
     public float knockBackStrength;
     public Vector2 direction;
 
     private void FixedUpdate() {
         if (enemyHealth > 0) {
-            if (stunRemember <= 0) {
-                moveDirection = 1;
-                rb.velocity = new Vector2(speedHoriz * moveDirection, rb.velocity.y);
-            }
-            else
-                moveDirection = 0;
-            
             stunRemember -= Time.deltaTime;    
         } 
         else if (enemyHealth <= 0)
