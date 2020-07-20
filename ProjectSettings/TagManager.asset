@@ -16,8 +16,8 @@ TagManager:
   - 
   - 
   - groundLayer
-  - wallLayer
   - hurtBox
+  - 
   - 
   - 
   - 

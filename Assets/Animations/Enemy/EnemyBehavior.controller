@@ -42,7 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMax: 2
   direction: 1
-  distance: 2
+  distance: 0.5
   isFacingRight: 1
 --- !u!1107 &-790887815820704301
 AnimatorStateMachine:

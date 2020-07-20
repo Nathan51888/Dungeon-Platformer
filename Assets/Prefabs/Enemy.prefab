@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 106276047580110404}
   - component: {fileID: 106276047580110405}
   - component: {fileID: 106276047580110406}
-  - component: {fileID: 106276047580110407}
   - component: {fileID: 106276047580110409}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -134,30 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.25, y: 1.75}
   m_EdgeRadius: 0
---- !u!114 &106276047580110407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106276047580110400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da32a980d14096ec2b29706fbb530010, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movement: {fileID: 0}
-  enemyHealthBar: {fileID: 0}
-  animator: {fileID: 106276047580110409}
-  rb: {fileID: 106276047580110405}
-  stunRemember: 0
-  stunRememberTime: 0.15
-  agroRange: 10
-  enemyHealth: 15
-  enemyMaxHealth: 15
-  knockBackStrength: 15
-  direction: {x: 1, y: 0}
-  groundDetection: {fileID: 106276048826067418}
 --- !u!95 &106276047580110409
 Animator:
   serializedVersion: 3
@@ -168,7 +143,7 @@ Animator:
   m_GameObject: {fileID: 106276047580110400}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b3b7fd01418ece2d88e166787f7d947f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -187,7 +162,6 @@ GameObject:
   m_Component:
   - component: {fileID: 106276047972304361}
   - component: {fileID: 106276047972304360}
-  - component: {fileID: 106276047972304367}
   m_Layer: 0
   m_Name: HitBox
   m_TagString: Untagged
@@ -235,19 +209,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &106276047972304367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106276047972304362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9fd729c75e102d52adc87432ac7b690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
 --- !u!1 &106276048826067419
 GameObject:
   m_ObjectHideFlags: 0
