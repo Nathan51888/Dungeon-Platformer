@@ -8,8 +8,12 @@ public class PlayerPhysics : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        jump = new PlayerMovementY(_rigidbody);
+        jump = new PlayerMovementY();
     }
+
+    [Header("Jump")]
+    [SerializeField] float lowJumpMultiplier;
+    [SerializeField] float fallMultiplier;
 
     // Physics
     private void FixedUpdate()
@@ -19,13 +23,13 @@ public class PlayerPhysics : MonoBehaviour
 
     private void ChangeJumpGravity()
     {
-        switch (jump.CheckButtonRelease(PlayerInput.JumpReleased()))
+        switch (jump.CheckButtonRelease(_rigidbody, PlayerInput.JumpReleased()))
         {
             case true:
-                jump.SetLowJumpGravity(lowJumpMultiplier);
+                jump.SetLowJumpGravity(_rigidbody, lowJumpMultiplier);
                 break;
             case false:
-                jump.SetNormalJumpGravity(fallMultiplier);
+                jump.SetNormalJumpGravity(_rigidbody, fallMultiplier);
                 break;
         }
     }

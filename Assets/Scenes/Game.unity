@@ -200,7 +200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127553779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.191805, y: 3.4921553, z: -10}
+  m_LocalPosition: {x: 3.1892548, y: 3.492162, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6401ef169dfb5a695912b6b39577a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frame1: {fileID: 0}
+  frame1: {fileID: 728167764}
   frame2: {fileID: 0}
 --- !u!61 &220317626
 BoxCollider2D:
@@ -678,6 +678,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709391032}
   m_CullTransparentMesh: 0
+--- !u!1 &728167764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7065207672958282787, guid: 03a1c64c2dd3169929784245dfb27b7c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7065207673602337897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &834980421
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +834,6 @@ GameObject:
   m_Component:
   - component: {fileID: 947121604}
   - component: {fileID: 947121605}
-  - component: {fileID: 947121606}
   m_Layer: 5
   m_Name: EnemyHealthBar
   m_TagString: Untagged
@@ -908,18 +913,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &947121606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 947121603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103682bc3e34bce20b0832a80f273a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &979664971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7065207672958282786, guid: 03a1c64c2dd3169929784245dfb27b7c,
@@ -937,6 +930,26 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpVelocity
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534378097353579991, guid: abc47ca8274c5dbf4bb0e2dca2fdb252,
+        type: 3}
+      propertyPath: jumpVelocity
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534378097353579991, guid: abc47ca8274c5dbf4bb0e2dca2fdb252,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890922652479778578, guid: abc47ca8274c5dbf4bb0e2dca2fdb252,
+        type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890922652479778578, guid: abc47ca8274c5dbf4bb0e2dca2fdb252,
+        type: 3}
+      propertyPath: fallMultiplier
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6847450530148201856, guid: abc47ca8274c5dbf4bb0e2dca2fdb252,
         type: 3}
@@ -998,7 +1011,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: abc47ca8274c5dbf4bb0e2dca2fdb252, type: 3}
 --- !u!95 &1067826971 stripped
 Animator:
@@ -1378,7 +1396,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1794984008}
   - component: {fileID: 1794984007}
-  - component: {fileID: 1794984006}
   m_Layer: 5
   m_Name: PlayerHealthBar
   m_TagString: Untagged
@@ -1386,18 +1403,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1794984006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794984005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103682bc3e34bce20b0832a80f273a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1794984007
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class PlayerTimer
 {
-    public float maxJumpBufferTime;
+    public float maxJumpBufferTime = 0.1f;
     Timer jumpBufferTimer;
 
     public void SetJumpBufferTimer()
     {
         jumpBufferTimer = new Timer(maxJumpBufferTime);
     }
-    private bool TickJumpBuffer()
+    private bool TickJumpBuffer(float deltaTime)
     {
-        bool timerStatus = jumpBufferTimer.Tick(Time.deltaTime);
+        bool timerStatus = jumpBufferTimer.Tick(deltaTime);
         return timerStatus;
     }
-    public bool CheckJumpBufferEnd()
+    public bool CheckJumpBufferEnd(float deltaTime)
     {
-        bool timerEnd = TickJumpBuffer();
+        bool timerEnd = TickJumpBuffer(deltaTime);
         return timerEnd;
     }
 }

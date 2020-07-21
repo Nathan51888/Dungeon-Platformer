@@ -8,42 +8,40 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        movementY = new PlayerMovementY(PlayerPhysics._rigidbody);
-        movementX = new PlayerMovementX(PlayerPhysics._rigidbody);
+        movementY = new PlayerMovementY();
+        jumpBuffer = new PlayerTimer();
+        movementX = new PlayerMovementX();
     }
 
     [Header("Jump")]
-    [SerializedField] float lowJumpMultiplier;
-    [SerializedField] float fallMultiplier;
-    [SerializedField] float jumpVelocity;
+    [SerializeField] float jumpVelocity;
 
     [Header("Movement")]
-    [SerializedField] float maxSpeed;
+    [SerializeField] float maxSpeed;
 
     // Controller
+    float playerAxisX;
     private void Update()
     {
         Jump();
+        Move();
     }
     private void Jump()
     {
         if (PlayerInput.JumpPressed())
         {
-            movementY.SetVelocityY(jumpVelocity);
-            SetJumpTimer();
+            movementY.SetVelocityY(PlayerPhysics._rigidbody, jumpVelocity);
+            jumpBuffer = new PlayerTimer();
+            jumpBuffer.SetJumpBufferTimer();
         }
         else
         {
-            CheckJumpTimer();
+            jumpBuffer.CheckJumpBufferEnd(Time.deltaTime);
         }
     }
-    private void SetJumpTimer()
+    private void Move()
     {
-        jumpBuffer = new PlayerTimer();
-        jumpBuffer.SetJumpBufferTimer();
-    }
-    private void CheckJumpTimer()
-    {
-        jumpBuffer.CheckJumpBufferEnd();
+        playerAxisX = movementX.GetPlayerAxisX(maxSpeed, PlayerInput.HorizontalAxis());
+        movementX.SetVelocityX(PlayerPhysics._rigidbody, playerAxisX);
     }
 }
