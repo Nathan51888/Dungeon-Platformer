@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Frame : MonoBehaviour
+public class FrameDetection : MonoBehaviour
 {
     public GameObject frame1;
     public GameObject frame2;
