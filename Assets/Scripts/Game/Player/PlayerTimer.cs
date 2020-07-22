@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class PlayerTimer
 {
-    public float maxJumpBufferTime = 0.1f;
     Timer jumpBufferTimer;
 
     public void SetJumpBufferTimer()
     {
-        jumpBufferTimer = new Timer(maxJumpBufferTime);
+        jumpBufferTimer = new Timer(PlayerInfo.maxJumpBufferTime);
     }
     private bool TickJumpBuffer(float deltaTime)
     {
