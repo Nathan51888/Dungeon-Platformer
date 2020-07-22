@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
         if (PlayerDetection.isGrounded == false)
             return;
 
-        if (PlayerInput.JumpPressed())
+        if (PlayerInput.GetJumpPressed())
         {
             movementY.SetVelocityY(PlayerPhysics._rigidbody, PlayerInfo.jumpVelocity);
             jumpBuffer = new PlayerTimer();
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     
     private void Move()
     {
-        float playerAxisX = movementX.GetPlayerAxisX(PlayerInfo.maxSpeed, PlayerInput.HorizontalAxis());
+        float playerAxisX = movementX.GetPlayerAxisX(PlayerInfo.maxSpeed, PlayerInput.GetHorizontalAxis());
         movementX.SetVelocityX(PlayerPhysics._rigidbody, playerAxisX);
     }
 }

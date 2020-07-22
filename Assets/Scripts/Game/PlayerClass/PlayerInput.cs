@@ -11,37 +11,37 @@ public static class PlayerInput
     static bool pressedSubmit;
     static bool pressedCancel;
     
-    public static float HorizontalAxis()
+    public static float GetHorizontalAxis()
     {
         playerAxisX = Input.GetAxisRaw("Horizontal");
         return playerAxisX;
     }
-    public static float VerticalAxis()
+    public static float GetVerticalAxis()
     {
         playerAxisY = Input.GetAxisRaw("Vertical");
         return playerAxisY;
     }
-    public static bool JumpPressed()
+    public static bool GetJumpPressed()
     {
         pressedJump = Input.GetButtonDown("Jump");
         return pressedJump;
     }
-    public static bool JumpReleased()
+    public static bool GetJumpReleased()
     {
         releasedJump = Input.GetButton("Jump");
         return releasedJump;
     }
-    public static bool Attack1Pressed()
+    public static bool GetAttack1Pressed()
     {
         pressedAttack1 = Input.GetButtonDown("Attack1");
         return pressedAttack1;
     }
-    public static bool ResetPressed()
+    public static bool GetResetPressed()
     {
         pressedReset = Input.GetButtonDown("Reset");
         return pressedReset;
     }
-    public static bool SubmitPressed()
+    public static bool GetSubmitPressed()
     {
         pressedSubmit = Input.GetButtonDown("Submit");
         return pressedSubmit;

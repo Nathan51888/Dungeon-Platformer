@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerPhysics : MonoBehaviour 
+public class PlayerPhysics : MonoBehaviour
 {
     private void Start()
     {
@@ -13,10 +13,10 @@ public class PlayerPhysics : MonoBehaviour
 
     PlayerMovementY jump = new PlayerMovementY();
     public static Rigidbody2D _rigidbody;
-    
+
     private void ChangeJumpGravity()
     {
-        switch (jump.CheckButtonRelease(_rigidbody, PlayerInput.JumpReleased()))
+        switch (jump.CheckButtonRelease(_rigidbody, PlayerInput.GetJumpReleased()))
         {
             case true:
                 jump.SetLowJumpGravity(_rigidbody, PlayerInfo.lowJumpMultiplier);

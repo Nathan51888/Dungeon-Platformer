@@ -2,37 +2,43 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    Animator animator;
+    public static Animator animator;
 
-    private void Start() {
-        animator = GetComponent<Animator>();
+    private void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
     }
-
-    public void SetHorizontal(float horiz)
+    private void LateUpdate()
+    {
+        SetHorizontal(Mathf.Abs(PlayerInput.GetHorizontalAxis()));
+        SetVertical(PlayerPhysics._rigidbody.velocity.y);
+        SetIsGrounded(PlayerDetection.isGrounded);
+    }
+    public static void SetHorizontal(float horiz)
     {
         animator.SetFloat("Horiz", horiz);
     }
-    public void SetVertical(float vert)
+    public static void SetVertical(float vert)
     {
         animator.SetFloat("Vert", vert);
     }
-    public void SetIsGrounded(bool grounded)
+    public static void SetIsGrounded(bool grounded)
     {
         animator.SetBool("IsGrounded", grounded);
     }
-    public void SetIsWallSliding(bool wallSliding)
+    public static void SetIsWallSliding(bool wallSliding)
     {
         animator.SetBool("IsWallSliding", wallSliding);
     }
-    public void SetIsDead(bool endGame)
+    public static void SetIsDead(bool endGame)
     {
         animator.SetBool("IsDead", endGame);
     }
-    public void SetDamaged()
+    public static void SetDamaged()
     {
         animator.SetTrigger("IsDamaged");
     }
-    public void SetPressedAttack()
+    public static void SetPressedAttack()
     {
         animator.SetTrigger("PressedAttack");
     }
