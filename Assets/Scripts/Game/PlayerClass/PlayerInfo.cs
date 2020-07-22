@@ -12,4 +12,5 @@ public class PlayerInfo
     public static int maxHealth = 10;
     // Timers
     public static float maxJumpBufferTime = 0.1f;
+    public static float maxGroundBufferTime = 0.1f;
 }

@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        if (PlayerDetection.isGrounded == false)
+            return;
+
         if (PlayerInput.JumpPressed())
         {
             movementY.SetVelocityY(PlayerPhysics._rigidbody, PlayerInfo.jumpVelocity);
@@ -19,9 +22,7 @@ public class PlayerController : MonoBehaviour
             jumpBuffer.SetJumpBufferTimer();
         }
         else
-        {
             jumpBuffer.CheckJumpBufferEnd(Time.deltaTime);
-        }
     }
     PlayerMovementY movementY = new PlayerMovementY();
     PlayerMovementX movementX = new PlayerMovementX();
