@@ -10,7 +10,7 @@ public class PlayerAnimator : MonoBehaviour
     }
     private void LateUpdate()
     {
-        SetHorizontal(Mathf.Abs(PlayerInput.GetHorizontalAxis()));
+        SetHorizontal(Mathf.Abs(PlayerInput.PlayerAxisX));
         SetVertical(PlayerPhysics._rigidbody.velocity.y);
         SetIsGrounded(PlayerDetection.isGrounded);
     }

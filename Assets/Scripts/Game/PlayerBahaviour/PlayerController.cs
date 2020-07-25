@@ -8,28 +8,22 @@ public class PlayerController : MonoBehaviour
         Jump();
     }
 
-    PlayerTimer jumpBuffer = new PlayerTimer();
-
+    PlayerMovementY movementY = new PlayerMovementY();
+    PlayerMovementX movementX = new PlayerMovementX();
+    
     private void Jump()
     {
         if (PlayerDetection.isGrounded == false)
             return;
 
-        if (PlayerInput.GetJumpPressed())
+        if (PlayerInput.PressedJump)
         {
             movementY.SetVelocityY(PlayerPhysics._rigidbody, PlayerInfo.jumpVelocity);
-            jumpBuffer = new PlayerTimer();
-            jumpBuffer.SetJumpBufferTimer();
         }
-        else
-            jumpBuffer.CheckJumpBufferEnd(Time.deltaTime);
     }
-    PlayerMovementY movementY = new PlayerMovementY();
-    PlayerMovementX movementX = new PlayerMovementX();
-    
     private void Move()
     {
-        float playerAxisX = movementX.GetPlayerAxisX(PlayerInfo.maxSpeed, PlayerInput.GetHorizontalAxis());
+        float playerAxisX = movementX.GetPlayerAxisX(PlayerInfo.maxSpeed, PlayerInput.PlayerAxisX);
         movementX.SetVelocityX(PlayerPhysics._rigidbody, playerAxisX);
     }
 }

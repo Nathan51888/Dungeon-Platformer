@@ -16,7 +16,7 @@ public class PlayerPhysics : MonoBehaviour
 
     private void ChangeJumpGravity()
     {
-        switch (jump.CheckButtonRelease(_rigidbody, PlayerInput.GetJumpReleased()))
+        switch (jump.CheckButtonRelease(_rigidbody, PlayerInput.ReleasedJump))
         {
             case true:
                 jump.SetLowJumpGravity(_rigidbody, PlayerInfo.lowJumpMultiplier);

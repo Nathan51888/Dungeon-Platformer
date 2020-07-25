@@ -13,7 +13,7 @@ public class PlayerMovementY
     }
     public bool CheckButtonRelease(Rigidbody2D rigidbody, bool releasedJump)
     {
-        if (rigidbody.velocity.y > 0 && !releasedJump)
+        if (rigidbody.velocity.y > 0 && releasedJump)
             return true;
 
         return false;

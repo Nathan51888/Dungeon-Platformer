@@ -2,53 +2,44 @@ using UnityEngine;
 
 public static class PlayerInput
 {
-    static float playerAxisX;
-    static float playerAxisY;
-    static bool pressedJump;
-    static bool releasedJump;
-    static bool pressedAttack1;
-    static bool pressedReset;
-    static bool pressedSubmit;
-    static bool pressedCancel;
-    
-    public static float GetHorizontalAxis()
+    public static float PlayerAxisX
     {
-        playerAxisX = Input.GetAxisRaw("Horizontal");
-        return playerAxisX;
+        get
+        {
+            float axisX = Input.GetAxisRaw("Horizontal");
+            return axisX;
+        }
     }
-    public static float GetVerticalAxis()
+    public static float PlayerAxisY
     {
-        playerAxisY = Input.GetAxisRaw("Vertical");
-        return playerAxisY;
+        get
+        {
+            float axisY = Input.GetAxisRaw("Vertical");
+            return axisY;
+        }
     }
-    public static bool GetJumpPressed()
+    public static bool PressedJump
     {
-        pressedJump = Input.GetButtonDown("Jump");
-        return pressedJump;
+        get
+        {
+            bool pressedJump = Input.GetButtonDown("Jump");
+            return pressedJump;
+        }
     }
-    public static bool GetJumpReleased()
+    public static bool ReleasedJump
     {
-        releasedJump = Input.GetButton("Jump");
-        return releasedJump;
+        get
+        {
+            bool releasedJump = !Input.GetButton("Jump");
+            return releasedJump;
+        }
     }
-    public static bool GetAttack1Pressed()
+    public static bool PressedAttack1
     {
-        pressedAttack1 = Input.GetButtonDown("Attack1");
-        return pressedAttack1;
-    }
-    public static bool GetResetPressed()
-    {
-        pressedReset = Input.GetButtonDown("Reset");
-        return pressedReset;
-    }
-    public static bool GetSubmitPressed()
-    {
-        pressedSubmit = Input.GetButtonDown("Submit");
-        return pressedSubmit;
-    }
-    public static bool CancelPressed()
-    {
-        pressedCancel = Input.GetButtonDown("Cancel");
-        return pressedCancel;
+        get
+        {
+            bool pressedAttack1 = Input.GetButtonDown("Attack1");
+            return pressedAttack1;
+        }
     }
 }

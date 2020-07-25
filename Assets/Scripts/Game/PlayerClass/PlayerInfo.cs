@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerInfo
+public static class PlayerInfo
 {
     // Jump
     public static float jumpVelocity = 26;
