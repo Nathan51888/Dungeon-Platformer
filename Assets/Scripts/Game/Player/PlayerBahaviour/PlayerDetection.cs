@@ -7,15 +7,14 @@ public class PlayerDetection : MonoBehaviour
         CheckGround();
     }
 
-    public static bool isGrounded;
-    public LayerMask groundLayers;
+    [SerializeField] private LayerMask _groundLayers;
 
     private void CheckGround()
     {
-        isGrounded = Physics2D.OverlapArea(
+        PlayerInfo.IsGrounded = Physics2D.OverlapArea(
             new Vector2 (transform.position.x - 0.4f, transform.position.y - 1f),
             new Vector2 (transform.position.x + 0.4f, transform.position.y - 1.1f), 
-            groundLayers);
+            _groundLayers);
     }
 
     private void OnDrawGizmos() {

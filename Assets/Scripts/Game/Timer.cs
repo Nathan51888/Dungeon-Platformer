@@ -1,23 +1,19 @@
 using System;
+using UnityEngine;
 
 public class Timer
 {
-    public float _currentTime;
-
-    public Timer(float setTime)
+    public Timer()
     {
-        _currentTime = setTime;
+        RecordedTime = Time.time;
     }
+    public float RecordedTime { get; set; }
 
-    public bool Tick(float deltaTime)
+    public bool TimerIsPassed(float fmaxTime)
     {
-        if (_currentTime <= 0)
-        {
-            _currentTime = 0;
+        if (fmaxTime < (Time.time - RecordedTime))
             return true;
-        }
         
-        _currentTime -= deltaTime;
         return false;
     }
 }

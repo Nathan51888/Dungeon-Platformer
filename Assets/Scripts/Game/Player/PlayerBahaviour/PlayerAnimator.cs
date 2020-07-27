@@ -2,44 +2,44 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    public static Animator animator;
+    public static Animator Animator;
 
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
+        Animator = GetComponentInChildren<Animator>();
     }
     private void LateUpdate()
     {
         SetHorizontal(Mathf.Abs(PlayerInput.PlayerAxisX));
-        SetVertical(PlayerPhysics._rigidbody.velocity.y);
-        SetIsGrounded(PlayerDetection.isGrounded);
+        SetVertical(PlayerPhysics.Rigidbody.velocity.y);
+        SetIsGrounded(PlayerInfo.IsGrounded);
     }
     public static void SetHorizontal(float horiz)
     {
-        animator.SetFloat("Horiz", horiz);
+        Animator.SetFloat("Horiz", horiz);
     }
     public static void SetVertical(float vert)
     {
-        animator.SetFloat("Vert", vert);
+        Animator.SetFloat("Vert", vert);
     }
     public static void SetIsGrounded(bool grounded)
     {
-        animator.SetBool("IsGrounded", grounded);
+        Animator.SetBool("IsGrounded", grounded);
     }
     public static void SetIsWallSliding(bool wallSliding)
     {
-        animator.SetBool("IsWallSliding", wallSliding);
+        Animator.SetBool("IsWallSliding", wallSliding);
     }
     public static void SetIsDead(bool endGame)
     {
-        animator.SetBool("IsDead", endGame);
+        Animator.SetBool("IsDead", endGame);
     }
     public static void SetDamaged()
     {
-        animator.SetTrigger("IsDamaged");
+        Animator.SetTrigger("IsDamaged");
     }
     public static void SetPressedAttack()
     {
-        animator.SetTrigger("PressedAttack");
+        Animator.SetTrigger("PressedAttack");
     }
 }

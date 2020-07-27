@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class FrameDetection : MonoBehaviour
 {
-    public GameObject frame1;
-    public GameObject frame2;
+    public GameObject Frame1;
+    public GameObject Frame2;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        switch (frame1.activeInHierarchy)
+        switch (Frame1.activeInHierarchy)
         {
             case true:
-                frame1.SetActive(false);
-                frame2.SetActive(true);
+                Frame1.SetActive(false);
+                Frame2.SetActive(true);
                 break;
             case false:
-                frame2.SetActive(false);
-                frame1.SetActive(true);
+                Frame2.SetActive(false);
+                Frame1.SetActive(true);
                 break;
         }
     }

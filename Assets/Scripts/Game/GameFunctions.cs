@@ -1,13 +1,9 @@
 using UnityEngine;
 
-public static class CommonFunctions
+public static class GameFunctions
 {
-    public static void Flip(Transform transform, bool facingRight, bool canFlip)
+    public static void Flip(Transform transform)
     {
-        if (!canFlip)
-            return;
-        
-        facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
