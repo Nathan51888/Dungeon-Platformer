@@ -15,4 +15,5 @@ public static class PlayerInfo
     // Timers
     public static float MaxJumpBufferTime = 0.1f;
     public static float MaxGroundBufferTime = 0.1f;
+    public static float MaxAttackBufferTime = 0.5f;
 }
