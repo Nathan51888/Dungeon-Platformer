@@ -2,27 +2,27 @@ using UnityEngine;
 
 public class PlayerPhysics : MonoBehaviour
 {
-    private void Start()
+    private void Start ()
     {
-        Rigidbody = GetComponent<Rigidbody2D>();
+        Rigidbody = GetComponent<Rigidbody2D> ();
     }
-    private void FixedUpdate()
+    private void FixedUpdate ()
     {
-        ChangeJumpGravity();
+        ChangeJumpGravity ();
     }
 
-    PlayerMovementY _movementY = new PlayerMovementY();
+    PlayerMovementY _movementY = new PlayerMovementY ();
     public static Rigidbody2D Rigidbody;
 
-    private void ChangeJumpGravity()
+    private void ChangeJumpGravity ()
     {
-        switch (_movementY.CheckButtonRelease(Rigidbody, PlayerInput.ReleasedJump))
+        switch (_movementY.CheckButtonRelease (Rigidbody, PlayerInput.ReleasedJump))
         {
             case true:
-                _movementY.SetLowJumpGravity(Rigidbody, PlayerInfo.LowJumpMultiplier);
+                _movementY.SetLowJumpGravity (Rigidbody, PlayerInfo.LowJumpMultiplier);
                 break;
             case false:
-                _movementY.SetNormalJumpGravity(Rigidbody, PlayerInfo.FallMultiplier);
+                _movementY.SetNormalJumpGravity (Rigidbody, PlayerInfo.FallMultiplier);
                 break;
         }
     }

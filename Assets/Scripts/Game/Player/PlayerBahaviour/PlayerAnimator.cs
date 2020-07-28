@@ -4,42 +4,42 @@ public class PlayerAnimator : MonoBehaviour
 {
     public static Animator Animator;
 
-    private void Start()
+    private void Start ()
     {
-        Animator = GetComponentInChildren<Animator>();
+        Animator = GetComponentInChildren<Animator> ();
     }
-    private void LateUpdate()
+    private void LateUpdate ()
     {
-        SetHorizontal(Mathf.Abs(PlayerInput.PlayerAxisX));
-        SetVertical(PlayerPhysics.Rigidbody.velocity.y);
-        SetIsGrounded(PlayerInfo.IsGrounded);
+        SetHorizontal (Mathf.Abs (PlayerInput.PlayerAxisX));
+        SetVertical (PlayerPhysics.Rigidbody.velocity.y);
+        SetIsGrounded (PlayerInfo.IsGrounded);
     }
-    public static void SetHorizontal(float horiz)
+    public static void SetHorizontal (float horiz)
     {
-        Animator.SetFloat("Horiz", horiz);
+        Animator.SetFloat ("Horiz", horiz);
     }
-    public static void SetVertical(float vert)
+    public static void SetVertical (float vert)
     {
-        Animator.SetFloat("Vert", vert);
+        Animator.SetFloat ("Vert", vert);
     }
-    public static void SetIsGrounded(bool grounded)
+    public static void SetIsGrounded (bool grounded)
     {
-        Animator.SetBool("IsGrounded", grounded);
+        Animator.SetBool ("IsGrounded", grounded);
     }
-    public static void SetIsWallSliding(bool wallSliding)
+    public static void SetIsWallSliding (bool wallSliding)
     {
-        Animator.SetBool("IsWallSliding", wallSliding);
+        Animator.SetBool ("IsWallSliding", wallSliding);
     }
-    public static void SetIsDead(bool endGame)
+    public static void SetIsDead (bool endGame)
     {
-        Animator.SetBool("IsDead", endGame);
+        Animator.SetBool ("IsDead", endGame);
     }
-    public static void SetDamaged()
+    public static void SetDamaged ()
     {
-        Animator.SetTrigger("IsDamaged");
+        Animator.SetTrigger ("IsDamaged");
     }
-    public static void SetPressedAttack()
+    public static void SetPressedAttack ()
     {
-        Animator.SetTrigger("PressedAttack");
+        Animator.SetTrigger ("PressedAttack");
     }
 }

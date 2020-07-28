@@ -6,7 +6,7 @@ public static class PlayerInput
     {
         get
         {
-            float axisX = Input.GetAxisRaw("Horizontal");
+            float axisX = Input.GetAxisRaw ("Horizontal");
             return axisX;
         }
     }
@@ -14,7 +14,7 @@ public static class PlayerInput
     {
         get
         {
-            float axisY = Input.GetAxisRaw("Vertical");
+            float axisY = Input.GetAxisRaw ("Vertical");
             return axisY;
         }
     }
@@ -22,7 +22,7 @@ public static class PlayerInput
     {
         get
         {
-            bool pressedJump = Input.GetButtonDown("Jump");
+            bool pressedJump = Input.GetButtonDown ("Jump");
             return pressedJump;
         }
     }
@@ -30,7 +30,7 @@ public static class PlayerInput
     {
         get
         {
-            bool releasedJump = !Input.GetButton("Jump");
+            bool releasedJump = !Input.GetButton ("Jump");
             return releasedJump;
         }
     }
@@ -38,7 +38,7 @@ public static class PlayerInput
     {
         get
         {
-            bool pressedAttack1 = Input.GetButtonDown("Attack1");
+            bool pressedAttack1 = Input.GetButtonDown ("Attack1");
             return pressedAttack1;
         }
     }
