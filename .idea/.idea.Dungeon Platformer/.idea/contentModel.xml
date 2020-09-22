@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_Dungeon Platformer.2052567349.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="Enemy" t="Include">
+            <e p="EnemyHotZone.cs" t="Include" />
+            <e p="EnemyHurtTrigger.cs" t="Include" />
+            <e p="EnemyManager.cs" t="Include" />
+            <e p="EnemySprite.cs" t="Include" />
+            <e p="EnemyStateManager.cs" t="Include" />
+            <e p="EnemyTriggerArea.cs" t="Include" />
+            <e p="States" t="Include">
+              <e p="ChaseState.cs" t="Include" />
+              <e p="DashState.cs" t="Include" />
+              <e p="IEnemyState.cs" t="Include" />
+              <e p="IdleState.cs" t="Include" />
+              <e p="WanderState.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Game" t="Include">
+            <e p="CheckPoint.cs" t="Include" />
+            <e p="EndingTrigger.cs" t="Include" />
+            <e p="GameManager.cs" t="Include" />
+            <e p="IDamageable.cs" t="Include" />
+          </e>
+          <e p="Player" t="Include">
+            <e p="PlayerGravity.cs" t="Include" />
+            <e p="PlayerInputAction.cs" t="Include" />
+            <e p="PlayerManager.cs" t="Include" />
+            <e p="PlayerSprite.cs" t="Include" />
+            <e p="PlayerStateManager.cs" t="Include" />
+            <e p="States" t="Include">
+              <e p="AttackState.cs" t="Include" />
+              <e p="DashState.cs" t="Include" />
+              <e p="FallState.cs" t="Include" />
+              <e p="HurtState.cs" t="Include" />
+              <e p="IPlayerState.cs" t="Include" />
+              <e p="IdleJumpState.cs" t="Include" />
+              <e p="IdleState.cs" t="Include" />
+              <e p="RunJumpState.cs" t="Include" />
+              <e p="RunState.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Dungeon Platformer.sln" t="IncludeFlat" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

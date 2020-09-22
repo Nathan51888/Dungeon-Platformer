@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -15,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - groundLayer
-  - hurtBox
-  - 
-  - 
-  - 
+  - Platform
+  - Middle Ground
+  - Background
+  - Enemy Hurtbox
+  - Player Hurtbox
   - 
   - 
   - 
@@ -40,6 +41,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 335356673
+    locked: 0
+  - name: Middle Ground
+    uniqueID: 2376484283
+    locked: 0
+  - name: Platform
+    uniqueID: 2876476059
+    locked: 0
+  - name: UI
+    uniqueID: 2947484721
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

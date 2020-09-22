@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8d190924-bd16-4c7e-96d7-a0a5b27fa544" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CheckPoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerGravity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerSprite.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/IPlayerState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/States/IEnemyState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyTriggerArea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyHotZone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/States/Wander.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/States/WanderState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySprite.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/States/IdleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/HurtState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/States/ChaseState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/States/DashState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerStateManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/DashState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/RunJumpState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/IdleJumpState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/FallState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/RunState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/IdleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/States/AttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/EndingTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hP4aqspwcIR8d0lk5wjXx1UCzJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2DActionPlatformer" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Build/Dungeon Platformer.x86_64" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8d190924-bd16-4c7e-96d7-a0a5b27fa544" name="Default Changelist" comment="" />
+      <created>1599899461297</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1599899461297</updated>
+      <workItem from="1599899466571" duration="5580000" />
+      <workItem from="1599972811878" duration="890000" />
+      <workItem from="1599973994952" duration="10377000" />
+      <workItem from="1600068371640" duration="11973000" />
+      <workItem from="1600149823930" duration="5196000" />
+      <workItem from="1600241098937" duration="3748000" />
+      <workItem from="1600331804558" duration="1774000" />
+      <workItem from="1600667709869" duration="712000" />
+      <workItem from="1600669110460" duration="658000" />
+      <workItem from="1600671228677" duration="1541000" />
+      <workItem from="1600674276530" duration="3676000" />
+      <workItem from="1600681035636" duration="169000" />
+      <workItem from="1600681272202" duration="1329000" />
+      <workItem from="1600743701646" duration="3044000" />
+      <workItem from="1600747067293" duration="4675000" />
+      <workItem from="1600753324098" duration="934000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3318" y="490" width="402" height="460" key="FileChooserDialogImpl" timestamp="1600152366714">
+      <screen x="2560" y="180" width="1920" height="1080" />
+    </state>
+    <state x="1010" y="403" width="530" height="597" key="FileChooserDialogImpl/0.0.2560.1404/2560.180.1920.1080@0.0.2560.1404" timestamp="1599974009921" />
+    <state x="3318" y="490" width="402" height="460" key="FileChooserDialogImpl/0.0.2560.1404/2560.180.1920.1080@2560.180.1920.1080" timestamp="1600152366714" />
+    <state x="3327" y="422" width="545" height="775" key="RiderGenerateDialog" timestamp="1600152330607">
+      <screen x="2560" y="180" width="1920" height="1080" />
+    </state>
+    <state x="1023" y="314" key="RiderGenerateDialog/0.0.2560.1404/2560.180.1920.1080@0.0.2560.1404" timestamp="1600076478895" />
+    <state x="3327" y="422" width="545" height="775" key="RiderGenerateDialog/0.0.2560.1404/2560.180.1920.1080@2560.180.1920.1080" timestamp="1600152330607" />
+  </component>
+</project>
